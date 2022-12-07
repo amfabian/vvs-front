@@ -15,7 +15,7 @@
           <tr v-for="anuncio of this.anuncios" :key="anuncio.id">
              <td>
                 <table>
-                <img :src="anuncio.manga.image_url" style="height: 100px;" @click="voltar">
+                <img :src="anuncio.manga.images.jpg.image_url" style="height: 100px;" @click="voltar">
                 </table>
              </td>
             <td>{{anuncio.manga.title}}</td>

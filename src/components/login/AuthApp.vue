@@ -50,7 +50,7 @@
       }  
     },
        mounted(){
-
+        console.log("INICIO AUTHAPP")
        User.list().then(resposta => {
             console.log("MOUNTED"+resposta)
             this.usuarios = resposta.data

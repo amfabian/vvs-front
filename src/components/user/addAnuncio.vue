@@ -28,7 +28,7 @@
                 </thead>
               <tbody>
                 <tr v-for="manga of mangas" :key="manga.id">
-                  <td><img :src="manga.image_url" style="height: 150px;"></td>
+                  <td><img :src="manga.images.jpg.image_url" style="height: 150px;"></td>
                   <td>{{ manga.title }}</td>
                   <td>{{ manga.chapters }}</td>
                   <td>
@@ -51,7 +51,7 @@
                 </thead>
               <tbody>
                 <tr>
-                  <td><img :src="manga.image_url" style="height: 150px;"></td>
+                  <td><img :src="manga.images.jpg.image_url" style="height: 150px;"></td>
                   <td>{{ manga.title }}</td>
                   <td>{{ manga.chapters }}</td>
                   <td>
@@ -97,7 +97,7 @@ import Manga from '../services/test'
 
         },
         criar(){
-          console.log("antes de criar mangá: " + this.manga.title + this.manga.image_url)
+          console.log("antes de criar mangá: " + this.manga.title + this.manga.images.jpg.image_url)
           Manga.criarManga(this.manga).then(resposta => {
             console.log("RESPOSTA MANGA"+resposta)
             console.log("manga resp: "+resposta.data.mal_id)
@@ -123,7 +123,7 @@ import Manga from '../services/test'
         console.log("query: "+this.nome_manga)
         Manga.pesquisarManga(this.nome_manga).then(resposta => {
           console.log(resposta)
-          this.mangas = resposta.data.results
+          this.mangas = resposta.data.data
         })
         
            this.estado = 2
